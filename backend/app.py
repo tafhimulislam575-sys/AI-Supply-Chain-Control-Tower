@@ -19,10 +19,35 @@ def dashboard():
         2
     )
 
+    supplier_risk = []
+
+    for _, row in df.iterrows():
+
+        score = round(
+            (row["on_time"] / row["orders"]) * 100,
+            2
+        )
+
+        if score >= 90:
+            status = "GREEN"
+
+        elif score >= 80:
+            status = "YELLOW"
+
+        else:
+            status = "RED"
+
+        supplier_risk.append({
+            "supplier": row["supplier"],
+            "score": score,
+            "status": status
+        })
+
     return jsonify({
-        "suppliers": int(total_suppliers),
+        "suppliers": total_suppliers,
         "orders": int(total_orders),
-        "delivery": delivery_rate
+        "delivery": delivery_rate,
+        "risk_analysis": supplier_risk
     })
 
 if __name__ == "__main__":
