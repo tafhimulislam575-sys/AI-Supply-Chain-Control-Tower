@@ -2,32 +2,39 @@
 <html>
 
 <head>
-    <title>AI Supply Chain Control Tower</title>
+    <title>Supply Chain Control Tower</title>
+
     <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
 
-<h1>Supply Chain Control Tower</h1>
+<h1>AI Supply Chain Control Tower</h1>
 
 <div class="dashboard">
 
-<div class="card">
-<h3>Suppliers</h3>
-<h2 id="suppliers">0</h2>
+    <div class="card">
+        <h3>Suppliers</h3>
+        <h2 id="suppliers">0</h2>
+    </div>
+
+    <div class="card">
+        <h3>Orders</h3>
+        <h2 id="orders">0</h2>
+    </div>
+
+    <div class="card">
+        <h3>Delivery %</h3>
+        <h2 id="delivery">0</h2>
+    </div>
+
 </div>
 
-<div class="card">
-<h3>Orders</h3>
-<h2 id="orders">0</h2>
-</div>
+<br>
 
-<div class="card">
-<h3>On-Time Delivery</h3>
-<h2 id="delivery">0%</h2>
-</div>
-
-</div>
+<canvas id="riskChart"></canvas>
 
 <script src="script.js"></script>
 
